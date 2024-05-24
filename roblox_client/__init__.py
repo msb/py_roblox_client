@@ -20,6 +20,7 @@ MAX_RETRIES = 5
 
 # Defining particular useful status response codes here
 NO_CONTENT = 204
+FORBIDDEN = 403
 NOT_FOUND = 404
 TOO_MANY_REQUESTS = 429 
 BAD_GATEWAY = 502
