@@ -15,15 +15,16 @@ ORDERED_DATASTORE_URL = (
     RBX_API_URL + 'ordered-data-stores/v1/universes/{}/orderedDataStores/{}/scopes/{}/entries'
 )
 
-# The maximum number of retries 
+# The maximum number of retries
 MAX_RETRIES = 5
 
 # Defining particular useful status response codes here
 NO_CONTENT = 204
 FORBIDDEN = 403
 NOT_FOUND = 404
-TOO_MANY_REQUESTS = 429 
+TOO_MANY_REQUESTS = 429
 BAD_GATEWAY = 502
+
 
 class AsyncClientBase:
     """
@@ -159,4 +160,3 @@ async def ods_client(universe_id, ods_name, scope='global', **kwargs):
     """
     async with aiohttp.ClientSession(**with_x_api_key(kwargs)) as session:
         yield AsyncOrderedDataStoreClient(session, universe_id, ods_name, scope)
-
